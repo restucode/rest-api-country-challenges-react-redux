@@ -8,14 +8,11 @@ const CountryList = ({ allCountry, searchCountry, selectRegion, loading }) => {
   else if(country.region.toLowerCase() === selectRegion.toLowerCase()) {
    return country
   }
-  return country
  }).filter(country => {
   if(searchCountry === null) return country
   else if(country.name.toLowerCase().includes(searchCountry.toLowerCase())) {
    return country
   }
-
-  return country
  }).map(country => (
     <Link className="card-country" to={`detail/${country.name}`} key={country.name}>
       <div className="card-img">
