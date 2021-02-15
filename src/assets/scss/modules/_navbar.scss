@@ -1,0 +1,60 @@
+@use './root/variables' as v;
+
+.nav {
+	padding: 20px 20px;
+	background-color: white;
+	box-shadow: 0 1px 5px 0px rgba(0,0,0,.1);
+	transition: background-color 0.3s ease-in-out, color 0.6s ease-in-out, stroke 0.6s ease-in-out;
+	.navbar-area {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0 auto;
+		max-width: 1200px;
+	@media (min-width: 968px) {
+	}
+		.brand {
+			width: 100px;
+		@media(min-width: 400px) {
+			width: 200px;
+		}
+			a {
+				font-weight: 800;
+				color: black;
+				font-size: .9rem;
+			}
+		}
+		.dark-mode {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			svg {
+				width: 20px;
+				color: white;
+				margin-right: 5px;
+				stroke: black;
+			}
+			span {
+				font-weight: bold;
+				font-size: .9rem;
+			}
+		}
+	}
+}
+
+body.dark  .nav {
+	background-color: v.$db-element;
+	color: white;
+	.brand {
+		a {
+			color: white;
+		}
+	}
+
+	.dark-mode {
+		svg {
+			stroke: white;
+		}
+	}
+}
